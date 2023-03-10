@@ -37,305 +37,158 @@ function callWiki(breed) {
 // Beginning of Pet Finder portion of the of the javascript **************
 
 var petFinderEl = document.querySelector('.pet-form');
-var searchButtonEl = document.querySelector('.search-button');
+var searchButtonEl = document.querySelector('.search-btn');
+var resultsEL = document.querySelector('.results-section');
+
+//elements to render pet information to the card 
+var petNameEL = document.querySelector('#pet-name');
+var petAgeEL = document.querySelector('#pet-age');
+var petSexEL = document.querySelector('#pet-sex');
+var petBreedEl = document.querySelector('#pet-breed');
+var petCityEl = document.querySelector('#pet-city');
+var petDescrEl = document.querySelector('#pet-description');
+var petPhoneEl = document.querySelector('#pet-phone');
+var petEmailEl = document.querySelector('#pet-email');
+
+var resultsControl = 0;
 
 // Array of objects to store pet information to add cards 
 
 var listOfPets = [
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-},
-{
-    name: 'placeholder',
-    age: 'placeholder',
-    sex: 'placeholder',
-    breed: 'placeholder',
-    city: 'placeholder',
-    description: 'placeholder',
-    phone: 'placeholder',
-    photosrc: 'placeholder',
-}
-
+    
 ]
 
 
 function findAPet(zipCode, petType) {
-//Pet Finder Token Retrieval and API call using Fetch 
+    //Pet Finder Token Retrieval and API call using Fetch 
 
-var key = 'qgajQp5Sh4wBqaiW1tYAfGUswfOhe6QFezqLK4RvTAbsQLaidf';
-var secret = '3kKyNX18yAsbYwc31rTWewjvWxdUyFG0ostuqJJz';
+    var key = 'qgajQp5Sh4wBqaiW1tYAfGUswfOhe6QFezqLK4RvTAbsQLaidf';
+    var secret = '3kKyNX18yAsbYwc31rTWewjvWxdUyFG0ostuqJJz';
 
 
-var statusVar = 'adoptable';
-var distanceFrom = '50';
+    var statusVar = 'adoptable';
+    var distanceFrom = '50';
 
-//fetch token from pet finder
-fetch('https://api.petfinder.com/v2/oauth2/token', {
-	method: 'POST',
-	body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
-	headers: {
-		'Content-Type': 'application/x-www-form-urlencoded'
-	}
-}).then(function (resp) {
+    //fetch token from pet finder
+    fetch('https://api.petfinder.com/v2/oauth2/token', {
+        method: 'POST',
+        body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    }).then(function (resp) {
 
-	// Return the response as JSON
-	return resp.json();
+        // Return the response as JSON
+        return resp.json();
 
-}).then(function (data) {
+    }).then(function (data) {
 
-	// Logs the  token to the screen 
-	console.log('token', data);
+        // Logs the  token to the screen 
+        console.log('token', data);
 
-    // Second API call using the token that we recieved
-	return fetch('https://api.petfinder.com/v2/animals?location=' + zipCode + '&status=' + statusVar + '&type=' + petType + '&distance=' + distanceFrom, {
-		headers: {
-			'Authorization': data.token_type + ' ' + data.access_token,
-			'Content-Type': 'application/x-www-form-urlencoded'
-		}
-	});
+        // Second API call using the token that we recieved
+        return fetch('https://api.petfinder.com/v2/animals?location=' + zipCode + '&status=' + statusVar + '&type=' + petType + '&distance=' + distanceFrom, {
+            headers: {
+                'Authorization': data.token_type + ' ' + data.access_token,
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        });
 
-}).then(function (resp) {
+    }).then(function (resp) {
 
-	// Return the API response as JSON
-	return resp.json();
+        // Return the API response as JSON
+        return resp.json();
 
-}).then(function (data) {
+    }).then(function (data) {
 
-	// Log the pet data by zip code and chosen pet type within a certain distance from zip code that are status 'adoptable'
-	console.log('pets', data);
+        // Log the pet data by zip code and chosen pet type within a certain distance from zip code that are status 'adoptable'
+        console.log('pets', data);
 
-    if(data) {
-    displayPetResults(data);
-    }
-
-}).catch(function (err) {
-
-	// Log any errors
-	console.log('something went wrong', err);
-
-});
-
-}
-//function to update object array to display results from search
-function displayPetResults(data) {
-
-    for(var i=0; i < listOfPets.length; i++){
-        
-        //assign data to keys in object array 
-
-        listOfPets[i].name = data.animals[i].name;
-        listOfPets[i].age = data.animals[i].age;
-        listOfPets[i].sex = data.animals[i].gender;
-        listOfPets[i].breed = data.animals[i].breeds.primary;
-        listOfPets[i].city = data.animals[i].contact.address.city;
-        listOfPets[i].description = data.animals[i].description;
-        listOfPets[i].phone = data.animals[i].contact.address.phone;
-
-        //check to see if photo available
-        if(data.animals[i].photos.length){
-        listOfPets[i].photosrc = data.animals[i].photos[0].full;
-        } else {
-            listOfPets[i].photosrc = 'no photo available';
+        if (data) {
+            savePetResults(data);
         }
 
+    }).catch(function (err) {
+
+        // Log any errors
+        console.log('something went wrong', err);
+
+    });
+
+}
+
+//function to update object array to display results from search
+function savePetResults(data) {
+
+    for (var i = 0; i < 20; i++) {
+        var isPhoto = '';
+
+        //check to see if photo available
+        if (data.animals[i].photos.length) {
+            isPhoto = data.animals[i].photos[0].full;
+        } else {
+            isPhoto = 'no photo available';
+        }
+
+        //check to see if phone number is listed 
+        if(data.animals[i].contact.phone != null){
+            var isPhone = data.animals[i].contact.phone;
+        } else {
+            isPhone = 'no phone number listed';
+        }
+
+        //check to see if email is listed 
+        if(data.animals[i].contact.email != null){
+            var isEmail = data.animals[i].contact.email;
+        } else {
+            isEmail = 'No e-mail listed';
+        }
+
+        //assign data to keys in object array 
+        const object = {
+        name: data.animals[i].name,
+        age: data.animals[i].age,
+        sex: data.animals[i].gender,
+        breed: data.animals[i].breeds.primary,
+        city: data.animals[i].contact.address.city,
+        description: data.animals[i].description,
+        phone: isPhone,
+        photo: isPhoto,
+        email: isEmail,
+    };
+        //push new index to array of objects
+        listOfPets.push(object);
+
     }
+
     //display listOfPets to verify information is stored
     console.log(listOfPets);
 }
 
+function renderPetResults() {
+    //checks to makesure the results control variable is less than the listOfPets object array length
+    if (resultsControl < listOfPets.length) {
+        //sets variable LoadPets to the index of listOfPets based on the value of results Control
+        var loadPets = listOfPets[resultsControl];
+
+        //loads pet details to the screen 
+        petNameEL.textContent = loadPets.name;
+        petAgeEL.textContent = loadPets.age;
+        petSexEL.textContent = loadPets.sex;
+        petBreedEl.textContent = loadPets.breed;
+        petCityEl.textContent = loadPets.city;
+        petDescrEl.textContent = loadPets.description;
+        petPhoneEl.textContent = loadPets.phone;
+        petEmailEl.textContent = loadPets.email;
+    }
+}
+
 //on button click accept zip code and pet type selections and pass to find A Pet function call 
-searchButtonEl.addEventListener('click', function(event){
+searchButtonEl.addEventListener('click', function (event) {
     event.preventDefault();
 
     //store user zip code 
-    var chosenZip = document.getElementById('search-input').value;
+    var chosenZip = document.getElementById('pet-zip').value;
     console.log(chosenZip);
 
     //store users chosen pet type 
@@ -344,4 +197,28 @@ searchButtonEl.addEventListener('click', function(event){
 
     //calls find a pet function for api call 
     findAPet(chosenZip, chosenType);
+});
+
+//event listener for pet results slide control
+resultsEL.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    var element = event.target;
+
+    if (element.matches("button")) {
+        var selectedButton = element.getAttribute("id");
+        console.log(selectedButton);
+    }
+
+    //if the right arrow is selected add one to the results control variable and calls the render Pet function
+    if (selectedButton === 'right-arrow' && resultsControl < 20) {
+        resultsControl++;
+        renderPetResults();
+        //if the left arrow button is selected and the results control variable is not equal to 0, then subtract 1 from the results control and calls the render pet function
+    } else if (selectedButton === 'left-arrow' && resultsControl != 0) {
+        resultsControl--;
+        renderPetResults();
+    }
+
+    console.log(resultsControl);
 });
