@@ -68,3 +68,8 @@
     font-size: larger;
     color: #cac7ff;
 }
+
+#pet-info{
+    display: flex;
+    flex-direction: row;
+}
