@@ -1,18 +1,17 @@
-
 APIKey = "716hc9i362cfpkvfqrvvo40o5f0p48uv"
 
 
-document.querySelector("#search-button").addEventListener("click", function (e) {
-    console.log(e)
-    e.preventDefault();
-    var searchInput = document.querySelector("#search-input").value;
-    if (searchInput === "") {
-        alert("enter a pet breed!")
-        return;
-    }
-    callWiki(searchInput)
+// document.querySelector("#search-button").addEventListener("click", function (e) {
+//     console.log(e)
+//     e.preventDefault();
+//     var searchInput = document.querySelector("#search-input").value;
+//     if (searchInput === "") {
+//         alert("enter a pet breed!")
+//         return;
+//     }
+//     callWiki(searchInput)
 
-})
+// })
 
 function callWiki(breed) {
     var wikiUrl = "https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=" + breed + "&limit=10&api=" + APIKey
@@ -38,7 +37,7 @@ function callWiki(breed) {
 // Beginning of Pet Finder portion of the of the javascript **************
 
 var petFinderEl = document.querySelector('.pet-form');
-var searchButtonEl = document.querySelector('.search-btn');
+var searchButtonEl = document.querySelector('.search-button');
 
 // Array of objects to store pet information to add cards 
 
@@ -336,7 +335,7 @@ searchButtonEl.addEventListener('click', function(event){
     event.preventDefault();
 
     //store user zip code 
-    var chosenZip = document.getElementById('pet-zip').value;
+    var chosenZip = document.getElementById('search-input').value;
     console.log(chosenZip);
 
     //store users chosen pet type 
