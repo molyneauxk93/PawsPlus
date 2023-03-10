@@ -9,51 +9,68 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://kit.fontawesome.com/f39bfcf929.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <section class="column is-full">
-    <div id="pet-info" class="hero has-background-info content is-medium">
-        <div class="block">
+<body class="background2">
+  <section class="columns is-desktop">
+    <div id="pet-info" class="has-background-info content is-medium">
+        <div class="column is-2">
             <strong><h1>pet name</h1></strong>
             <p id="pet-name">demitrious</p>
           </div>
-          <div class="block">
+          <div class="column is-2">
             <strong><h1>age</h1></strong>
             <p id="pet-age">100</p>
           </div>
-          <div class="block">
+          <div class="column is-2">
             <strong><h1>sex</h1></strong>
             <p id="pet-sex">F</p>
           </div>
-          <div class="block">
+          <div class="column is-2">
             <strong><h1>breed</h1></strong>
             <p id="pet-breed">german sheperd</p>
           </div>
-          <div class="block">
+          <div class="column is-2">
             <strong><h1>city</h1></strong>
             <p id="pet-city">new haven</p>
           </div>
-          <div class="block">
+          <div class="column is-2">
             <strong><h1>phone#</h1></strong>
             <p id="pet-phone">1234567890</p>
           </div>
     </div>
   </section>
 
-<section class="pet-image">
+<section class="pet-image is-half is-flex is-justify-content-center">
     <div class="card">
         <div class="card-image">
-            <figure class="image">
+            <figure class="image is-4by3">
                 <img id="pet-image" src="./images/gettyimages-1049869360-170667a.jpg" alt="image of pet">
             </figure>
         </div>
-        <div class="card-content">
+        <div id="description" class="card-content">
             <div class="content">
                 <h2>about this pet</h2>
                 <p id="pet-description">they are very cool and swag and they can jump over 14 school buses on a dirt
                     bike!</p>
+                    <button id="favorit-btn" class="button is-normal is-responsive">
+                      Favorit
+                    </button>
             </div>
         </div>
     </div>
+</section>
+
+<section>
+  <div class="columns">
+    <button id="prev-btn" class="button is-large is-responsive column is-one-third">
+      Previous
+    </button>
+    <button id="wiki-btn" class="button is-large is-responsive column is-one-third">
+      learn more about this breed!
+    </button>
+    <button id="next-btn" class="button is-large is-responsive column is-one-third">
+      Next
+    </button>
+  </div>
 </section>
 
 </body>
