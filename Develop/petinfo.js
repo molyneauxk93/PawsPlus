@@ -142,7 +142,7 @@ function savePetResults(data) {
         if (data.animals[i].photos.length) {
             isPhoto = data.animals[i].photos[0].full;
         } else {
-            isPhoto = 'no photo available';
+            isPhoto = './images/defult image.png';
         }
 
         //check to see if phone number is listed 
@@ -195,7 +195,7 @@ function renderPetResults() {
         petCityEl.textContent = loadPets.city;
         petDescrEl.textContent = loadPets.description;
         petPhoneEl.textContent = loadPets.phone;
-        // petEmailEl.textContent = loadPets.email;
+        petEmailEl.textContent = loadPets.email;
         document.getElementById('pet-image').src = loadPets.photo;
     }
 

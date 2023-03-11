@@ -21,5 +21,7 @@ searchButtonEl.addEventListener('click', function (event) {
     } else{
         alert('Please enter your zip code and select from the dropdown.');
         return;
+
     }
+    
 });

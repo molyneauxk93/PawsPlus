@@ -11,32 +11,35 @@
 </head>
 <body class="background2">
 
-
-  <section class="pet-info columns is-desktop">
-    <div id="pet-info" class="has-background-info content is-medium">
-        <div class="column is-2">
-            <strong><h1>pet name</h1></strong>
+  <section class="pet-info">
+    <div id="pet-info" class="content is-medium columns is-7 is-desktop">
+        <div class="column">
+            <h1>Pet Name</h1>
             <p id="pet-name"></p>
           </div>
-          <div class="column is-2">
-            <strong><h1>age</h1></strong>
+          <div class="column">
+            <h1>Age</h1>
             <p id="pet-age"></p>
           </div>
-          <div class="column is-2">
-            <strong><h1>sex</h1></strong>
+          <div class="column">
+            <h1>Sex</h1>
             <p id="pet-sex"></p>
           </div>
-          <div class="column is-2">
-            <strong><h1>breed</h1></strong>
+          <div class="column">
+            <h1>Breed</h1>
             <p id="pet-breed"></p>
           </div>
-          <div class="column is-2">
-            <strong><h1>city</h1></strong>
+          <div class="column">
+            <h1>city</h1>
             <p id="pet-city"></p>
           </div>
-          <div class="column is-2">
-            <strong><h1>phone#</h1></strong>
+          <div class="column">
+            <h1>Phone#</h1>
             <p id="pet-phone"></p>
+          </div>
+          <div class="column">
+            <h1>Email</h1>
+            <p id="pet-email"></p>
           </div>
     </div>
   </section>
@@ -44,17 +47,15 @@
 <section class="pet-image is-half is-flex is-justify-content-center">
     <div class="card">
         <div class="card-image">
-            <figure class="image is-4by3">
-                <img id="pet-image" src="./images/gettyimages-1049869360-170667a.jpg" alt="image of pet">
+            <figure class="image">
+                <img id="pet-image" src="./images/defult image.png" alt="image of pet">
             </figure>
         </div>
         <div id="description" class="card-content">
-            <div class="content">
-                <h2>about this pet</h2>
-                <p id="pet-description"></p>
-                    <button id="favorit-btn" class="button is-normal is-responsive">
-                      Favorit
-                    </button>
+            <div id="pet-description" class="content">
+              <button id="favorit-btn" class="button is-normal is-responsive">
+                Favorite
+              </button>
             </div>
         </div>
     </div>
@@ -73,7 +74,6 @@
     </button>
   </div>
 </section>
-
 <script src="./Develop/petinfo.js"></script>
 </body>
 </html>

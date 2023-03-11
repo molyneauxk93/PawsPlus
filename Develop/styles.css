@@ -72,7 +72,11 @@
 #pet-info{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    margin-left: 50px;
+    color: #cac7ff;
 }
+
 
 .background2{
     background: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9));
@@ -87,4 +91,19 @@
 
 #favorit-btn{
     background-color: pink;
+}
+
+h1{
+    color: #cac7ff;
+}
+
+.card {
+    min-width: 50%;
+    min-height: 50%;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.button-control{
+ 
 }
