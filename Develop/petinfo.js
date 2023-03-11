@@ -199,6 +199,11 @@ function renderPetResults() {
         document.getElementById('pet-image').src = loadPets.photo;
     }
 
+  //saves pet to favs
+  document.getElementById('favorit-button').addEventListener('click', function() {
+    saveToLocalStorage(loadPets);
+})
+
 }
 
 //event listener for pet results slide control
