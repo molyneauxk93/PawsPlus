@@ -180,7 +180,10 @@ function savePetResults(data) {
 
     //display listOfPets to verify information is stored
     console.log(listOfPets);
+    renderPetResults();
 }
+
+
 
 function renderPetResults() {
     
