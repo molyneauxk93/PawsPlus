@@ -180,10 +180,11 @@ function savePetResults(data) {
 
     //display listOfPets to verify information is stored
     console.log(listOfPets);
+    //filter results that dont have pet images
+    listOfPets = listOfPets.filter(image => image.photo != './images/defult image.png');
+    console.log(listOfPets);
     renderPetResults();
 }
-
-
 
 function renderPetResults() {
     
@@ -220,7 +221,7 @@ resultsEL.addEventListener('click', function (event) {
     }
 
     //if the right arrow is selected add one to the results control variable and calls the render Pet function
-    if (selectedButton === 'next-btn' && resultsControl < 20) {
+    if (selectedButton === 'next-btn' && resultsControl < listOfPets.length) {
         resultsControl++;
         renderPetResults();
         //if the left arrow button is selected and the results control variable is not equal to 0, then subtract 1 from the results control and calls the render pet function

@@ -85,16 +85,13 @@
 
 }
 
+
 #description{
     background: #cac7ff;
 }
 
 #favorit-btn{
-    background-color: pink;
-}
-
-h1{
-    color: #cac7ff;
+  background-color: pink;
 }
 
 .card {
@@ -105,5 +102,9 @@ h1{
 }
 
 .button-control{
- 
+    display: flex;
+    flex: row;
+    justify-content: center;
+    
 }
+
