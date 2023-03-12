@@ -180,7 +180,10 @@ function savePetResults(data) {
 
     //display listOfPets to verify information is stored
     console.log(listOfPets);
+    renderPetResults();
 }
+
+
 
 function renderPetResults() {
     
@@ -202,9 +205,6 @@ function renderPetResults() {
     }
 
   //saves pet to favs
-  document.getElementById('favorit-button').addEventListener('click', function() {
-    saveToLocalStorage(loadPets);
-})
 
 }
 
