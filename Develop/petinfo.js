@@ -202,9 +202,6 @@ function renderPetResults() {
     }
 
   //saves pet to favs
-  document.getElementById('favorit-button').addEventListener('click', function() {
-    saveToLocalStorage(loadPets);
-})
 
 }
 
