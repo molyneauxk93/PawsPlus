@@ -104,7 +104,7 @@ function findAPet(zipCode, petType) {
         console.log('token', data);
 
         // Second API call using the token that we recieved
-        return fetch('https://api.petfinder.com/v2/animals?location=' + zipCode + '&status=' + statusVar + '&type=' + petType + '&distance=' + distanceFrom, {
+        return fetch('https://api.petfinder.com/v2/animals?location=' + zipCode + '&status=' + statusVar + '&type=' + petType + '&distance=' + distanceFrom + '&limit-100',{
             headers: {
                 'Authorization': data.token_type + ' ' + data.access_token,
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -137,7 +137,7 @@ function findAPet(zipCode, petType) {
 //function to update object array to display results from search
 function savePetResults(data) {
 
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < data.animals.length; i++) {
         var isPhoto = '';
 
         //check to see if photo available
