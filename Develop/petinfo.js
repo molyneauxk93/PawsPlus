@@ -1,32 +1,25 @@
 APIKey = "716hc9i362cfpkvfqrvvo40o5f0p48uv"
 
+var breed = listOfPets//[i?];
 
-// document.querySelector("#search-button").addEventListener("click", function (e) {
-//     console.log(e)
-//     e.preventDefault();
-//     var searchInput = document.querySelector("#search-input").value;
-//     if (searchInput === "") {
-//         alert("enter a pet breed!")
-//         return;
-//     }
-//     callWiki(searchInput)
 
-// })
 
-function callWiki(breed) {
-    var wikiUrl = "https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=" + breed + "&limit=10&api=" + APIKey
+
+function callWiki(petBreed) {
+    var wikiUrl = "https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=" + petBreed + "&limit=10&api=" + APIKey
 
     fetch(wikiUrl)
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            var petInfoLink = document.querySelector("#pet-info-link");
+            var petInfoLink = document.querySelector("#wiki-btn");
 
             if (data.pages.length > 0) {
                 var pageTitle = data.pages[0].title;
                 var pageUrl = "https://en.wikipedia.org/wiki/" + pageTitle;
                 // petInfoLink.innerHTML = ``;
                 petInfoLink.setAttribute('href', `https://en.wikipedia.org/wiki/${data.pages[0].title}`)
+                window.location.href = `https://en.wikipedia.org/wiki/${data.pages[0].title}`;
             } else {
                 petInfoLink.innerHTML = "No results found";
             }
@@ -184,6 +177,17 @@ function savePetResults(data) {
     listOfPets = listOfPets.filter(image => image.photo != './images/defult image.png');
     console.log(listOfPets);
     renderPetResults();
+
+
+    document.querySelector("#wiki-btn").addEventListener("click", function (e) {
+        console.log(e)
+        e.preventDefault();
+        var petBreed = listOfPets[resultsControl].breed
+        callWiki(petBreed)
+    
+    })
+
+
 }
 
 function renderPetResults() {
