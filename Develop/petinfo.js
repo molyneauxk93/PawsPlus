@@ -51,6 +51,8 @@ function getParams() {
     findAPet(searchZip[1],searchType[1]);
 }
 
+var favoriteEl = document.getElementById('favorit-btn');
+
 var resultsEL = document.querySelector('.button-control');
 
 
@@ -229,6 +231,14 @@ resultsEL.addEventListener('click', function (event) {
 
     console.log(resultsControl);
 });
+
+
+//saves pet to favs
+favoriteEl.addEventListener('click', function() {
+    localStorage.setItem("favorite", JSON.stringify(listOfPets[resultsControl]));
+})
+
+
 
 //function call for get params
 getParams();
