@@ -1,83 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paws+</title>
-    <link rel="stylesheet" href="./develop/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script src="https://kit.fontawesome.com/f39bfcf929.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paws+</title>
+  <link rel="stylesheet" href="./develop/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/f39bfcf929.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="background2">
+  <nav class="navbar has-background-info has-text-black" id="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src="./images/logo-placeholder.jpg" width="112" height="28" alt="Pets+">
+      </a>
+    </div>
+    <div class="navbar-brand navbar-end">
+      <a href="favorites.html" class="navbar-item has-text-black">
+        Favorites
+      </a>
+      <a href="./main.html" class="navbar-item has-text-black">
+        Home
+      </a>
+    </div>
+  </nav>
 
   <section class="pet-info">
     <div id="pet-info" class="content is-medium columns is-7 is-desktop">
-        <div class="column">
-            <h1 class="has-text-white">Name</h1>
-            <p id="pet-name"></p>
-          </div>
-          <div class="column">
-            <h1 class="has-text-white">Age</h1>
-            <p id="pet-age"></p>
-          </div>
-          <div class="column">
-            <h1 class="has-text-white">Sex</h1>
-            <p id="pet-sex"></p>
-          </div>
-          <div class="column">
-            <h1 class="has-text-white">Breed</h1>
-            <p id="pet-breed"></p>
-          </div>
-          <div class="column">
-            <h1 class="has-text-white">city</h1>
-            <p id="pet-city"></p>
-          </div>
-          <div class="column">
-            <h1 class="has-text-white">Phone#</h1>
-            <p id="pet-phone"></p>
-          </div>
-          <div class="column">
-            <h1 class="has-text-white">Email</h1>
-            <p id="pet-email"></p>
-          </div>
+      <div class="column">
+        <h1 class="has-text-white">Name</h1>
+        <p id="pet-name"></p>
+      </div>
+      <div class="column">
+        <h1 class="has-text-white">Age</h1>
+        <p id="pet-age"></p>
+      </div>
+      <div class="column">
+        <h1 class="has-text-white">Sex</h1>
+        <p id="pet-sex"></p>
+      </div>
+      <div class="column">
+        <h1 class="has-text-white">Breed</h1>
+        <p id="pet-breed"></p>
+      </div>
+      <div class="column">
+        <h1 class="has-text-white">City</h1>
+        <p id="pet-city"></p>
+      </div>
+      <div class="column">
+        <h1 class="has-text-white">Phone #</h1>
+        <p id="pet-phone"></p>
+      </div>
+      <div class="column">
+        <h1 class="has-text-white">Email</h1>
+        <p id="pet-email"></p>
+      </div>
     </div>
   </section>
 
-<section class="pet-image is-half is-flex is-justify-content-center">
+  <section class="pet-image is-half is-flex is-justify-content-center">
     <div class="card">
-        <div class="card-image">
-            <figure class="image">
-                <img id="pet-image" src="./images/defult image.png" alt="image of pet">
-            </figure>
+      <div class="card-image">
+        <figure class="image">
+          <img id="pet-image" src="./images/defult image.png" alt="image of pet">
+        </figure>
+      </div>
+      <div id="description" class="card-content">
+        <div class="content">
+          <p id="pet-description"></p>
+          <button id="favorit-btn" class="button is-normal is-responsive">
+            Favorite
+          </button>
         </div>
-        <div id="pet-description"></div>
-        <div id="description" class="card-content">
-          
-            <div class="content">
-              <button id="favorit-btn" class="button is-normal is-responsive">
-                Favorite
-              </button>
-            </div>
-          </div>
-        </div>
+      </div>
     </div>
-</section>
+    </div>
+  </section>
 
-<section class="button-control">
-  <div class="">
-    <button id="prev-btn" class="button is-large is-responsive ">
-      Previous
-    </button>
-    <button id="wiki-btn" class="button is-large is-responsive">
-      learn more about this breed!
-    </button>
-    <button id="next-btn" class="button is-large is-responsive ">
-      Next
-    </button>
-  </div>
-</section>
-<script src="./Develop/petinfo.js"></script>
-<script src="./Develop/favorites.js"></script>
+  <section class="button-control">
+    <div class="">
+      <button id="prev-btn" class="button is-large is-responsive ">
+        Previous
+      </button>
+      <button id="wiki-btn" class="button is-large is-responsive">
+        Learn more about this breed!
+      </button>
+      <button id="next-btn" class="button is-large is-responsive ">
+        Next
+      </button>
+    </div>
+  </section>
+  <script src="./Develop/petinfo.js"></script>
+  <script src="./Develop/favorites.js"></script>
 </body>
+
 </html>
