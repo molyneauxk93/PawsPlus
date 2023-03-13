@@ -15,7 +15,7 @@
   <nav class="navbar has-background-info has-text-black" id="navbar">
     <div class="navbar-brand">
       <a class="navbar-item">
-        <img src="./images/logo-placeholder.jpg" width="112" height="28" alt="Pets+">
+        <img src="./images/logo-placeholder.jpg" alt="Pets+">
       </a>
     </div>
     <div class="navbar-brand navbar-end">
@@ -63,13 +63,13 @@
 
   <section class="pet-image is-half is-flex is-justify-content-center">
     <div class="card">
-      <div class="card-image">
-        <figure class="image">
-          <img id="pet-image" src="./images/defult image.png" alt="image of pet">
-        </figure>
-      </div>
       <div id="description" class="card-content">
         <div class="content">
+          <div class="card-image">
+            <figure>
+              <img id="pet-image" src="./images/defult image.png" alt="image of pet">
+            </figure>
+          </div>
           <p id="pet-description"></p>
           <button id="favorit-btn" class="button is-normal is-responsive">
             Favorite
@@ -93,8 +93,13 @@
       </button>
     </div>
   </section>
+  
   <script src="./Develop/petinfo.js"></script>
-  <script src="./Develop/favorites.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courgette&family=Josefin+Sans:ital@0;1&family=Shantell+Sans:ital,wght@1,300&display=swap"
+    rel="stylesheet">
 </body>
 
 </html>
