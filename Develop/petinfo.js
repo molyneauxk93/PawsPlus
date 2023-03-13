@@ -1,6 +1,6 @@
 APIKey = "716hc9i362cfpkvfqrvvo40o5f0p48uv"
 
-var breed = listOfPets//[i?];
+var breed = listOfPets;
 
 
 
@@ -188,7 +188,7 @@ function savePetResults(data) {
         var petBreed = listOfPets[resultsControl].breed
         callWiki(petBreed)
     
-    })
+    });
 
 
 }
@@ -212,7 +212,6 @@ function renderPetResults() {
         document.getElementById('pet-image').src = loadPets.photo;
     }
 
-  //saves pet to favs
 
 }
 
@@ -243,8 +242,9 @@ resultsEL.addEventListener('click', function (event) {
 
 //saves pet to favs
 favoriteEl.addEventListener('click', function() {
-    localStorage.setItem("favorite", JSON.stringify(listOfPets[resultsControl]));
-})
+    //save current displayed pet to local storage 
+    localStorage.setItem("favorite" + JSON.stringify(resultsControl), JSON.stringify(listOfPets[resultsControl]));
+});
 
 
 
