@@ -18,8 +18,11 @@ function callWiki(petBreed) {
                 var pageTitle = data.pages[0].title;
                 var pageUrl = "https://en.wikipedia.org/wiki/" + pageTitle;
                 // petInfoLink.innerHTML = ``;
-                petInfoLink.setAttribute('href', `https://en.wikipedia.org/wiki/${data.pages[0].title}`)
-                window.location.href = `https://en.wikipedia.org/wiki/${data.pages[0].title}`;
+                // petInfoLink.setAttribute('href', `https://en.wikipedia.org/wiki/${data.pages[0].title}`)
+                // window.location.href = `https://en.wikipedia.org/wiki/${data.pages[0].title}`;
+
+                //change to open wiki page in new tab, commented section above opens wiki in same window.
+                window.open(`https://en.wikipedia.org/wiki/${data.pages[0].title}`, '_blank').focus();
             } else {
                 petInfoLink.innerHTML = "No results found";
             }
@@ -97,7 +100,7 @@ function findAPet(zipCode, petType) {
         console.log('token', data);
 
         // Second API call using the token that we recieved
-        return fetch('https://api.petfinder.com/v2/animals?location=' + zipCode + '&status=' + statusVar + '&type=' + petType + '&distance=' + distanceFrom + '&limit-100',{
+        return fetch('https://api.petfinder.com/v2/animals?location=' + zipCode + '&status=' + statusVar + '&type=' + petType + '&distance=' + distanceFrom + '&limit=100',{
             headers: {
                 'Authorization': data.token_type + ' ' + data.access_token,
                 'Content-Type': 'application/x-www-form-urlencoded'
