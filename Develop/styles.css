@@ -74,6 +74,8 @@
     flex-direction: row;
     justify-content: center;
     margin-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     color: #cac7ff;
 }
 
@@ -88,6 +90,8 @@
 
 #description{
     background: #cac7ff;
+    color: black;
+    font: bolder;
 }
 
 #favorit-btn{
@@ -105,6 +109,5 @@
     display: flex;
     flex: row;
     justify-content: center;
-    
+    margin-top: 10px;
 }
-
